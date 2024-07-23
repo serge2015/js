@@ -1,19 +1,15 @@
 let movies;
+let selectedMovies;
+
 
 async function renderMovies(filter) {
   document.querySelector(".purple").innerText = `${filter}`
   const moviesWrapper = document.querySelector(".movies");
   moviesWrapper.classList += " movies__loading"
-
   if (!movies) {
     movies = await getMovies(filter, moviesWrapper);
   }
-  
   moviesWrapper.classList.remove("movies__loading")
-}
-
-function filterMovies(event) {
-  renderMovies(event.target.value)
 }
 
 async function getMovies(filter, moviesWrapper) {
@@ -35,4 +31,17 @@ function moviesHTML(movie) {
           ${movie.Year}
           </div>
         </div>`
+}
+
+function filterMovies(event) {
+  const moviesWrapper = document.querySelector(".movies");
+  if (event.target.value === "NEW_TO_OLD") {
+    selectedMovies.sort((a, b) => b.Year - a.Year)
+    console.log(selectedMovies)
+  }
+  else if (event.target.value === "OLD_TO_NEW") {
+    selectedMovies.sort((a, b) => a.Year - b.Year)
+    console.log(selectedMovies)
+  }
+  moviesWrapper.innerHTML = selectedMovies.map((movie) => moviesHTML(movie)).join("")
 }

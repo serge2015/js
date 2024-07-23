@@ -32,8 +32,8 @@
         </nav>
         <div class="input__search">
           <p>Browse our movies</p>
-          <input type="text" placeholder="Search here" name="keyword" id="keyword" onchange="renderMovies(document.getElementById('keyword').value)" />
-          <button class="search" type="submit" onclick="renderMovies(document.getElementById('keyword').value)">
+          <input type="text" placeholder="Search here" name="keyword" id="keyword" onchange="renderMovies(document.getElementById('keyword').value, event)" />
+          <button class="search" type="submit" onclick="renderMovies(document.getElementById('keyword').value, event)">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -44,6 +44,11 @@
             <h2 class="movies__header--title">
               Search results:&nbsp;<span class="purple"></span>
             </h2>
+            <select id="order" onchange="filterMovies(event)">
+              <option value="" disabled selected>Sort by</option>
+              <option value="NEW_TO_OLD">Year, New to Old</option>
+              <option value="OLD_TO_NEW">Year, Old to New</option>
+            </select>
           </div>
           <div class="movies">
             <i class="fas fa-spinner movies__loading--spinner"></i>
