@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Open Movie Database</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/56b37d1cc8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <section id="landing">
+      <div class="row" id="header">
+        <nav>
+          <a href="#" class="logo__text">
+            <img
+              src="./assets/movie-reel-projector-film-free.png"
+              alt="logo"
+              class="logo"
+            />&nbsp;&nbsp;Flicks</a
+          >
+          <ul class="nav__links">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="#" class="nav__link">Find your movie</a></li>
+            <li>
+              <a href="#" class="nav__link nav__link--primary">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="input__search">
+          <p>Browse our movies</p>
+          <input type="text" placeholder="Search here" name="keyword" id="keyword" onchange="renderMovies(document.getElementById('keyword').value)" />
+          <button class="search" type="submit" onclick="renderMovies(document.getElementById('keyword').value)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row row__column">
+          <div class="movies__header">
+            <h2 class="movies__header--title">
+              Search results:&nbsp;<span class="purple"></span>
+            </h2>
+          </div>
+          <div class="movies">
+            <i class="fas fa-spinner movies__loading--spinner"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
