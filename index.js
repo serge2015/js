@@ -17,7 +17,7 @@ function filterMovies(event) {
 }
 
 async function getMovies(filter, moviesWrapper) {
-    const movies = await fetch(`http://www.omdbapi.com/?apikey=4cfe7eb4&s=${filter}`)
+    const movies = await fetch(`https://www.omdbapi.com/?apikey=4cfe7eb4&s=${filter}`)
     const moviesData = await movies.json()
     selectedMovies = moviesData.Search.slice(0, 6)
     moviesWrapper.innerHTML = selectedMovies.map((movie) => moviesHTML(movie)).join("")
