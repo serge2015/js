@@ -299,14 +299,14 @@ vertical-align: bottom;
 
 
 .movie__img {
-max-height: 380px;
-max-width: 253px;
+height: 380px;
+width: 250px;
 transition: all 300ms ease;
 cursor: not-allowed;
 vertical-align: bottom;
 /* Added after tutorial to maintain image aspect ratio */
-object-fit: contain;
-object-position: left;
+object-fit: fill;
+object-position: center;
 }
 
 .movie__img--wrapper {
@@ -328,7 +328,7 @@ transform: scale(1.03);
 .movie__title, .movie__year {
 font-size: 20px;
 line-height: 1.5;
-width:253px;
+width:250px;
 padding: 10px;
 font-weight: bold;
 background-color: #eae5f1;
