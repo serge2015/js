@@ -29,6 +29,25 @@
               <a href="#" class="nav__link nav__link--primary">Contact</a>
             </li>
           </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()">Find your movie</a>
+              </li>
+              <li class="menu__list">
+                <a class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
+              </li>
+            </ul>
+          </div>
         </nav>
         <div class="input__search">
           <p>Browse our movies</p>

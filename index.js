@@ -1,6 +1,14 @@
 let movies;
 let selectedMovies;
 
+function openMenu() {
+  document.body.classList += "menu--open"
+}
+
+function closeMenu() {
+  document.body.classList.remove('menu--open')
+}
+
 
 async function renderMovies(filter) {
   document.querySelector(".purple").innerText = `${filter}`
@@ -30,6 +38,7 @@ function moviesHTML(movie) {
           <div class="movie__year">
           ${movie.Year}
           </div>
+          
         </div>`
 }
 
