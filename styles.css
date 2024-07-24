@@ -261,7 +261,7 @@ input:hover {
 
 .movies__header {
     display: flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
     padding: 20px 12px 0 12px;
     width: 100%;
@@ -447,4 +447,8 @@ animation: rotate 600ms infinite linear;
     .movie__img--wrapper {
         width: 100%;
     }
+
+    .movies__header--title {
+        width: 100%;
+      }
  }
