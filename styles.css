@@ -394,7 +394,9 @@ animation: rotate 600ms infinite linear;
       font-size: 26px;
     }
 
-
+    .input__search {
+        font-size: 24px;
+    }
   
     .nav__link, .logo__text, select {
         font-size: 20px;
@@ -406,7 +408,7 @@ animation: rotate 600ms infinite linear;
   @media (max-width: 697px) {
 
     .movie {
-        width:67%;
+        width:80%;
     }
 
     .nav__links {
@@ -425,5 +427,24 @@ animation: rotate 600ms infinite linear;
 
     select {
         margin: 24px auto 12px auto;
+    }
+
+    input {
+        width:200px;
+    }
+
+    h2, p, .input__search {
+        font-size: 20px; 
+    }
+
+ }
+
+ @media(max-width: 375px) {
+    .movie {
+        width:294px;
+    }
+
+    .movie__img--wrapper {
+        width: 100%;
     }
  }
