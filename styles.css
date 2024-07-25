@@ -269,11 +269,16 @@ input:hover {
 }
 
 .movies__header--title {
-    width: 50%;
+    width: 80%;
   }
 
 select {
     font-size: 24px;
+}
+
+.sort {
+    padding: 20px 12px 10px 12px;
+    width: 25%;
 }
 
 .movies {
@@ -282,8 +287,7 @@ flex-wrap: wrap;
 width: 100%;
 align-items: center;
 justify-content: center;
-margin: 0 3%;
-vertical-align: bottom;
+margin: 0 auto;
 }
 
 .movie {
@@ -294,7 +298,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 overflow: hidden;
-vertical-align: bottom;
 }
 
 
@@ -317,7 +320,6 @@ border-top-right-radius: 40px;
 border-bottom: 5px solid #7342d6;
 max-width: 100%;
 max-height: 100%;
-vertical-align: bottom;
 }
 
 .movie:hover .movie__img {

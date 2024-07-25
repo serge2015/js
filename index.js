@@ -58,6 +58,12 @@ function filterMovies(filter, event) {
   else if (event.target.value === "old to new") {
     selectedMovies.sort((a, b) => a.Year - b.Year)
   }
+  else if (event.target.value === "a to z") {
+    selectedMovies.sort((a, b) => a.Title !== b.Title ? a.Title < b.Title ? -1 : 1 : 0)
+  }
+  else if (event.target.value === "z to a") {
+    selectedMovies.sort((a, b) => b.Title !== a.Title ? b.Title < a.Title ? -1 : 1 : 0)
+  }
   document.getElementById("order").value = ""
   moviesWrapper.innerHTML = selectedMovies.map((movie) => moviesHTML(movie)).join("")
   return oldTargetValue
