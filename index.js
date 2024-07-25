@@ -1,5 +1,7 @@
 let movies;
 let selectedMovies;
+let oldTargetValue;
+let filter;
 
 function openMenu() {
   document.body.classList += "menu--open"
@@ -18,6 +20,7 @@ async function renderMovies(filter) {
     movies = await getMovies(filter, moviesWrapper);
   }
   moviesWrapper.classList.remove("movies__loading")
+  return filter
 }
 
 async function getMovies(filter, moviesWrapper) {
@@ -42,15 +45,22 @@ function moviesHTML(movie) {
         </div>`
 }
 
-function filterMovies(event) {
+function filterMovies(filter, event) {
+  console.log(oldTargetValue)
+  if (!!oldTargetValue) {
+    document.querySelector(".purple").innerText = `${filter}`
+  }
+  oldTargetValue = event.target.value
+  console.log(oldTargetValue)
+  document.querySelector(".purple").innerText += `, ${event.target.value}`
   const moviesWrapper = document.querySelector(".movies");
-  if (event.target.value === "NEW_TO_OLD") {
+  if (event.target.value === "New to old") {
     selectedMovies.sort((a, b) => b.Year - a.Year)
-    console.log(selectedMovies)
   }
-  else if (event.target.value === "OLD_TO_NEW") {
+  else if (event.target.value === "Old to new") {
     selectedMovies.sort((a, b) => a.Year - b.Year)
-    console.log(selectedMovies)
   }
+  document.getElementById("order").value = ""
   moviesWrapper.innerHTML = selectedMovies.map((movie) => moviesHTML(movie)).join("")
+  return oldTargetValue
 }

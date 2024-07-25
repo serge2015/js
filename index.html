@@ -60,13 +60,13 @@
       <div class="container">
         <div class="row row__column">
           <div class="movies__header">
-            <h2 class="movies__header--title"><!--test-->
+            <h2 class="movies__header--title">
               Search results:&nbsp;<span class="purple"></span>
             </h2>
-            <select id="order" onchange="filterMovies(event)">
+            <select id="order" onchange="filterMovies(document.getElementById('keyword').value, event)">
               <option value="" disabled selected>Sort by</option>
-              <option value="NEW_TO_OLD">Year, New to Old</option>
-              <option value="OLD_TO_NEW">Year, Old to New</option>
+              <option value="New to old">Year, New to Old</option>
+              <option value="Old to new">Year, Old to New</option>
             </select>
           </div>
           <div class="movies">
