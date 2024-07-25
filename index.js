@@ -46,18 +46,16 @@ function moviesHTML(movie) {
 }
 
 function filterMovies(filter, event) {
-  console.log(oldTargetValue)
   if (!!oldTargetValue) {
     document.querySelector(".purple").innerText = `${filter}`
   }
   oldTargetValue = event.target.value
-  console.log(oldTargetValue)
   document.querySelector(".purple").innerText += `, ${event.target.value}`
   const moviesWrapper = document.querySelector(".movies");
-  if (event.target.value === "New to old") {
+  if (event.target.value === "new to old") {
     selectedMovies.sort((a, b) => b.Year - a.Year)
   }
-  else if (event.target.value === "Old to new") {
+  else if (event.target.value === "old to new") {
     selectedMovies.sort((a, b) => a.Year - b.Year)
   }
   document.getElementById("order").value = ""
